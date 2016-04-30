@@ -15,6 +15,8 @@ public class MileTest {
         // then
         assertThat(new Mile(3).equals(new Mile(3)), is(true));
     }
+
+    @Test
     public void should_3_mile_not_equals_2_mile() throws Exception {
         // given
 
