@@ -20,4 +20,8 @@ public class Mile {
     public int hashCode() {
         return length;
     }
+
+    public Mile add(Mile other) {
+        return null;
+    }
 }
