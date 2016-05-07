@@ -6,7 +6,7 @@ import static org.hamcrest.core.Is.is;
 
 public class YardTest {
     @Test
-    public void should_3_Yard_equals_3_Yard() throws Exception {
+    public void should_3_yard_equals_3_yard() throws Exception {
         // given
 
         // when
@@ -16,7 +16,7 @@ public class YardTest {
     }
 
     @Test
-    public void should_3_Yard_not_equals_2_Yard() throws Exception {
+    public void should_3_yard_not_equals_2_yard() throws Exception {
         // given
 
         // when
@@ -26,7 +26,7 @@ public class YardTest {
     }
 
     @Test
-    public void should_5_Yard_equals_1_Yard_add_4_Yard() throws Exception {
+    public void should_5_yard_equals_1_yard_add_4_yard() throws Exception {
         // given
 
         // when
