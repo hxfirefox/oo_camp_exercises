@@ -1,16 +1,17 @@
 public class Length {
     protected int length;
-    private int amountOfBaseUnit;
+    protected int unitFactor;
 
-    public Length(int length) {
+    public Length(int length, int unitFactor) {
         this.length = length;
+        this.unitFactor = unitFactor;
     }
 
     @Override
     public boolean equals(Object o) {
         Length length = (Length) o;
 
-        return this.length * amountOfBaseUnit == length.length * length.amountOfBaseUnit;
+        return this.length * unitFactor == length.length * length.unitFactor;
 
     }
 
@@ -20,13 +21,13 @@ public class Length {
     }
 
     public Length add(Length other) {
+        final int len = this.length * unitFactor + other.length * other.unitFactor;
         final Length newLength =
-                new Length(this.length * amountOfBaseUnit + other.length * other.amountOfBaseUnit);
-        newLength.setAmountOfBaseUnit(1);
+                new Length(len, 1);
         return newLength;
     }
 
-    public void setAmountOfBaseUnit(int amountOfBaseUnit) {
-        this.amountOfBaseUnit = amountOfBaseUnit;
+    public void setUnitFactor(int unitFactor) {
+        this.unitFactor = unitFactor;
     }
 }
