@@ -22,11 +22,15 @@
 ```
 # 需求4
 用户可以以Feet为单位来表示一个长度，精度为1Feet，可以比较长度是否相等，还可以进行加法运算，例如：3 Feet == 3 Feet
-    ```
-    5 Feet = 1 Feet + 4 Feet
-    ```
+```
+   5 Feet = 1 Feet + 4 Feet
+   1 Yard = 12 Feet
+   ```
 # 需求5
 用户可以以Inch为单位来表示一个长度，精度为1Inch，可以比较长度是否相等，还可以进行加法运算，例如：3 Inch == 3 Inch
 ```
 5 Inch = 1 Inch + 4 Inch
+1 Feet = 3 Inch
 ```
+# 需求6
+用户只能使用上述几种长度单位(Mile、Yard、Feet、Inch)，而不应创建新的单位，避免产生奇怪而不存在的单位

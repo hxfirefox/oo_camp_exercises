@@ -1,14 +1,14 @@
 public class Length {
-    public static final int FEET_TO_BASE_UNIT = 3;
-    public static final int YARD_TO_BASE_UNIT = 12 * FEET_TO_BASE_UNIT;
-    public static final int MILE_TO_BASE_UNIT = 1760 * YARD_TO_BASE_UNIT;
-    public static final int INCH_TO_BASE_UNIT = 1;
-    public static final int BASE_UNIT = 1;
+    private static final int FEET_TO_BASE_UNIT = 3;
+    private static final int YARD_TO_BASE_UNIT = 12 * FEET_TO_BASE_UNIT;
+    private static final int MILE_TO_BASE_UNIT = 1760 * YARD_TO_BASE_UNIT;
+    private static final int INCH_TO_BASE_UNIT = 1;
+    private static final int BASE_UNIT = 1;
 
     protected int length;
     protected int unitFactor;
 
-    public Length(int length, int unitFactor) {
+    private Length(int length, int unitFactor) {
         this.length = length;
         this.unitFactor = unitFactor;
     }
