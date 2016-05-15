@@ -2,6 +2,7 @@ public class Length {
     public static final int FEET_TO_BASE_UNIT = 3;
     public static final int YARD_TO_BASE_UNIT = 12 * FEET_TO_BASE_UNIT;
     public static final int MILE_TO_BASE_UNIT = 1760 * YARD_TO_BASE_UNIT;
+    public static final int INCH_TO_BASE_UNIT = 1;
     public static final int BASE_UNIT = 1;
 
     protected int length;
@@ -22,6 +23,10 @@ public class Length {
 
     public static Length createFeet(int length) {
         return new Length(length, FEET_TO_BASE_UNIT);
+    }
+
+    public static Length createInch(int length) {
+        return new Length(length, INCH_TO_BASE_UNIT);
     }
 
     @Override

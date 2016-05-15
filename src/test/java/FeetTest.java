@@ -42,6 +42,6 @@ public class FeetTest {
         // when
 
         // then
-        assertThat(Length.createFeet(1).equals(new Inch(3)), is(true));
+        assertThat(Length.createFeet(1).equals(Length.createInch(3)), is(true));
     }
 }
