@@ -1,5 +1,8 @@
+package github.hxfirefox.lengthunit;
+
 import org.junit.Test;
 
+import static github.hxfirefox.lengthunit.Length.inch;
 import static junit.framework.TestCase.assertFalse;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -12,7 +15,7 @@ public class InchTest {
         // when
 
         // then
-        assertThat(Length.inch(3).equals(Length.inch(3)), is(true));
+        assertThat(inch(3).equals(inch(3)), is(true));
     }
 
     @Test
@@ -22,7 +25,7 @@ public class InchTest {
         // when
 
         // then
-        assertFalse(Length.inch(3).equals(Length.inch(2)));
+        assertFalse(inch(3).equals(inch(2)));
     }
 
     @Test
@@ -32,6 +35,6 @@ public class InchTest {
         // when
 
         // then
-        assertThat(Length.inch(5).equals(Length.inch(1).add(Length.inch(4))), is(true));
+        assertThat(inch(5).equals(inch(1).add(inch(4))), is(true));
     }
 }

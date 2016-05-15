@@ -1,5 +1,9 @@
+package github.hxfirefox.lengthunit;
+
 import org.junit.Test;
 
+import static github.hxfirefox.lengthunit.Length.feet;
+import static github.hxfirefox.lengthunit.Length.yard;
 import static junit.framework.TestCase.assertFalse;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -12,7 +16,7 @@ public class YardTest {
         // when
 
         // then
-        assertThat(Length.yard(3).equals(Length.yard(3)), is(true));
+        assertThat(yard(3).equals(yard(3)), is(true));
     }
 
     @Test
@@ -22,7 +26,7 @@ public class YardTest {
         // when
 
         // then
-        assertFalse(Length.yard(3).equals(Length.yard(2)));
+        assertFalse(yard(3).equals(yard(2)));
     }
 
     @Test
@@ -32,7 +36,7 @@ public class YardTest {
         // when
 
         // then
-        assertThat(Length.yard(5).equals(Length.yard(1).add(Length.yard(4))), is(true));
+        assertThat(yard(5).equals(yard(1).add(yard(4))), is(true));
     }
 
     @Test
@@ -42,6 +46,6 @@ public class YardTest {
         // when
 
         // then
-        assertThat(Length.yard(1).equals(Length.feet(12)), is(true));
+        assertThat(yard(1).equals(feet(12)), is(true));
     }
 }

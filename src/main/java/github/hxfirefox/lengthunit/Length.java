@@ -1,3 +1,5 @@
+package github.hxfirefox.lengthunit;
+
 public class Length {
     private static final int FEET_TO_BASE_UNIT = 3;
     private static final int YARD_TO_BASE_UNIT = 12 * FEET_TO_BASE_UNIT;

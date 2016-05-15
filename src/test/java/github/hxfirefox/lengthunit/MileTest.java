@@ -1,5 +1,9 @@
+package github.hxfirefox.lengthunit;
+
+import github.hxfirefox.lengthunit.Length;
 import org.junit.Test;
 
+import static github.hxfirefox.lengthunit.Length.*;
 import static junit.framework.TestCase.assertFalse;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -12,7 +16,7 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.mile(3).equals(Length.mile(3)), is(true));
+        assertThat(mile(3).equals(mile(3)), is(true));
     }
 
     @Test
@@ -22,7 +26,7 @@ public class MileTest {
         // when
 
         // then
-        assertFalse(Length.mile(3).equals(Length.mile(2)));
+        assertFalse(mile(3).equals(mile(2)));
     }
 
     @Test
@@ -32,7 +36,7 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.mile(5).equals(Length.mile(1).add(Length.mile(4))), is(true));
+        assertThat(mile(5).equals(mile(1).add(mile(4))), is(true));
     }
 
     @Test
@@ -42,7 +46,7 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.mile(1).equals(Length.yard(1760)), is(true));
+        assertThat(mile(1).equals(yard(1760)), is(true));
     }
 
     @Test
@@ -52,6 +56,6 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.yard(1762).equals(Length.mile(1).add(Length.yard(2))), is(true));
+        assertThat(yard(1762).equals(mile(1).add(yard(2))), is(true));
     }
 }
