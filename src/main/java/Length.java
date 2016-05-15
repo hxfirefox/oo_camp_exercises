@@ -8,6 +8,10 @@ public class Length {
         this.unitFactor = unitFactor;
     }
 
+    public static Length createMile(int length) {
+        return new Length(length, MILE_TO_BASE_UNIT);
+    }
+
     @Override
     public boolean equals(Object o) {
         Length length = (Length) o;
