@@ -34,4 +34,14 @@ public class FeetTest {
         // then
         assertThat(new Feet(5).equals(new Feet(1).add(new Feet(4))), is(true));
     }
+
+    @Test
+    public void should_1_feet_equals_3_inch() throws Exception {
+        // given
+
+        // when
+
+        // then
+        assertThat(new Feet(1).equals(new Inch(3)), is(true));
+    }
 }

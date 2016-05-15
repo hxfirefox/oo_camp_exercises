@@ -34,4 +34,14 @@ public class YardTest {
         // then
         assertThat(new Yard(5).equals(new Yard(1).add(new Yard(4))), is(true));
     }
+
+    @Test
+    public void should_1_yard_equals_12_feet() throws Exception {
+        // given
+
+        // when
+
+        // then
+        assertThat(new Yard(1).equals(new Feet(12)), is(true));
+    }
 }
