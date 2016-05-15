@@ -3,7 +3,6 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertFalse;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertTrue;
 
 public class MileTest {
     @Test

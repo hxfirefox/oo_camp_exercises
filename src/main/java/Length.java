@@ -1,7 +1,9 @@
 public class Length {
-    public static final int YARD_TO_BASE_UNIT = 12 * 3;
+    public static final int FEET_TO_BASE_UNIT = 3;
+    public static final int YARD_TO_BASE_UNIT = 12 * FEET_TO_BASE_UNIT;
     public static final int MILE_TO_BASE_UNIT = 1760 * YARD_TO_BASE_UNIT;
     public static final int BASE_UNIT = 1;
+
     protected int length;
     protected int unitFactor;
 
