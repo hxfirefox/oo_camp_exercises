@@ -1,5 +1,7 @@
 public class Length {
-    public static final int MILE_TO_BASE_UNIT = 1760 * 12 * 3;
+    public static final int YARD_TO_BASE_UNIT = 12 * 3;
+    public static final int MILE_TO_BASE_UNIT = 1760 * YARD_TO_BASE_UNIT;
+    public static final int BASE_UNIT = 1;
     protected int length;
     protected int unitFactor;
 
@@ -27,8 +29,7 @@ public class Length {
 
     public Length add(Length other) {
         final int len = this.length * unitFactor + other.length * other.unitFactor;
-        final Length newLength =
-                new Length(len, 1);
+        final Length newLength = new Length(len, BASE_UNIT);
         return newLength;
     }
 
