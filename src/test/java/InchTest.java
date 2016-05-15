@@ -12,7 +12,7 @@ public class InchTest {
         // when
 
         // then
-        assertThat(Length.createInch(3).equals(Length.createInch(3)), is(true));
+        assertThat(Length.inch(3).equals(Length.inch(3)), is(true));
     }
 
     @Test
@@ -22,7 +22,7 @@ public class InchTest {
         // when
 
         // then
-        assertFalse(Length.createInch(3).equals(Length.createInch(2)));
+        assertFalse(Length.inch(3).equals(Length.inch(2)));
     }
 
     @Test
@@ -32,6 +32,6 @@ public class InchTest {
         // when
 
         // then
-        assertThat(Length.createInch(5).equals(Length.createInch(1).add(Length.createInch(4))), is(true));
+        assertThat(Length.inch(5).equals(Length.inch(1).add(Length.inch(4))), is(true));
     }
 }

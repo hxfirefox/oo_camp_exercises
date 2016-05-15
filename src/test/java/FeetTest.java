@@ -12,7 +12,7 @@ public class FeetTest {
         // when
 
         // then
-        assertThat(Length.createFeet(3).equals(Length.createFeet(3)), is(true));
+        assertThat(Length.feet(3).equals(Length.feet(3)), is(true));
     }
 
     @Test
@@ -22,7 +22,7 @@ public class FeetTest {
         // when
 
         // then
-        assertFalse(Length.createFeet(3).equals(Length.createFeet(2)));
+        assertFalse(Length.feet(3).equals(Length.feet(2)));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class FeetTest {
         // when
 
         // then
-        assertThat(Length.createFeet(5).equals(Length.createFeet(1).add(Length.createFeet(4))), is(true));
+        assertThat(Length.feet(5).equals(Length.feet(1).add(Length.feet(4))), is(true));
     }
 
     @Test
@@ -42,6 +42,6 @@ public class FeetTest {
         // when
 
         // then
-        assertThat(Length.createFeet(1).equals(Length.createInch(3)), is(true));
+        assertThat(Length.feet(1).equals(Length.inch(3)), is(true));
     }
 }

@@ -12,7 +12,7 @@ public class YardTest {
         // when
 
         // then
-        assertThat(Length.createYard(3).equals(Length.createYard(3)), is(true));
+        assertThat(Length.yard(3).equals(Length.yard(3)), is(true));
     }
 
     @Test
@@ -22,7 +22,7 @@ public class YardTest {
         // when
 
         // then
-        assertFalse(Length.createYard(3).equals(Length.createYard(2)));
+        assertFalse(Length.yard(3).equals(Length.yard(2)));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class YardTest {
         // when
 
         // then
-        assertThat(Length.createYard(5).equals(Length.createYard(1).add(Length.createYard(4))), is(true));
+        assertThat(Length.yard(5).equals(Length.yard(1).add(Length.yard(4))), is(true));
     }
 
     @Test
@@ -42,6 +42,6 @@ public class YardTest {
         // when
 
         // then
-        assertThat(Length.createYard(1).equals(Length.createFeet(12)), is(true));
+        assertThat(Length.yard(1).equals(Length.feet(12)), is(true));
     }
 }

@@ -12,7 +12,7 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.createMile(3).equals(Length.createMile(3)), is(true));
+        assertThat(Length.mile(3).equals(Length.mile(3)), is(true));
     }
 
     @Test
@@ -22,7 +22,7 @@ public class MileTest {
         // when
 
         // then
-        assertFalse(Length.createMile(3).equals(Length.createMile(2)));
+        assertFalse(Length.mile(3).equals(Length.mile(2)));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.createMile(5).equals(Length.createMile(1).add(Length.createMile(4))), is(true));
+        assertThat(Length.mile(5).equals(Length.mile(1).add(Length.mile(4))), is(true));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.createMile(1).equals(Length.createYard(1760)), is(true));
+        assertThat(Length.mile(1).equals(Length.yard(1760)), is(true));
     }
 
     @Test
@@ -52,6 +52,6 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.createYard(1762).equals(Length.createMile(1).add(Length.createYard(2))), is(true));
+        assertThat(Length.yard(1762).equals(Length.mile(1).add(Length.yard(2))), is(true));
     }
 }

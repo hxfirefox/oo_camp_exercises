@@ -13,19 +13,19 @@ public class Length {
         this.unitFactor = unitFactor;
     }
 
-    public static Length createMile(int length) {
+    public static Length mile(int length) {
         return new Length(length, MILE_TO_BASE_UNIT);
     }
 
-    public static Length createYard(int length) {
+    public static Length yard(int length) {
         return new Length(length, YARD_TO_BASE_UNIT);
     }
 
-    public static Length createFeet(int length) {
+    public static Length feet(int length) {
         return new Length(length, FEET_TO_BASE_UNIT);
     }
 
-    public static Length createInch(int length) {
+    public static Length inch(int length) {
         return new Length(length, INCH_TO_BASE_UNIT);
     }
 
@@ -43,8 +43,7 @@ public class Length {
 
     public Length add(Length other) {
         final int len = this.length * unitFactor + other.length * other.unitFactor;
-        final Length newLength = new Length(len, BASE_UNIT);
-        return newLength;
+        return new Length(len, BASE_UNIT);
     }
 
     public void setUnitFactor(int unitFactor) {
