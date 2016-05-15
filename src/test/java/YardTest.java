@@ -42,6 +42,6 @@ public class YardTest {
         // when
 
         // then
-        assertThat(Length.createYard(1).equals(new Feet(12)), is(true));
+        assertThat(Length.createYard(1).equals(Length.createFeet(12)), is(true));
     }
 }
