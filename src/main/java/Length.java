@@ -14,12 +14,15 @@ public class Length {
         return new Length(length, MILE_TO_BASE_UNIT);
     }
 
+    public static Length createYard(int length) {
+        return new Length(length, YARD_TO_BASE_UNIT);
+    }
+
     @Override
     public boolean equals(Object o) {
         Length length = (Length) o;
 
         return this.length * unitFactor == length.length * length.unitFactor;
-
     }
 
     @Override

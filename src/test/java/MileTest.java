@@ -43,7 +43,7 @@ public class MileTest {
         // when
 
         // then
-        assertThat(Length.createMile(1).equals(new Yard(1760)), is(true));
+        assertThat(Length.createMile(1).equals(Length.createYard(1760)), is(true));
     }
 
     @Test
@@ -53,6 +53,6 @@ public class MileTest {
         // when
 
         // then
-        assertThat(new Yard(1762).equals(Length.createMile(1).add(new Yard(2))), is(true));
+        assertThat(Length.createYard(1762).equals(Length.createMile(1).add(Length.createYard(2))), is(true));
     }
 }
