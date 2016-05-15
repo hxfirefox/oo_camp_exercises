@@ -7,7 +7,7 @@ class MileSpockTest extends Specification {
         when:
 
         expect:
-        new Mile(3).equals(new Mile(3))
+        Length.createMile(3).equals(Length.createMile(3))
     }
 
     def "3 mile != 2 mile"() {
@@ -16,7 +16,7 @@ class MileSpockTest extends Specification {
         when:
 
         expect:
-        !new Mile(3).equals(new Mile(2))
+        !Length.createMile(3).equals(Length.createMile(2))
     }
 
     def "5 mile = 1 mile + 4 mile"() {
@@ -25,6 +25,6 @@ class MileSpockTest extends Specification {
         when:
 
         expect:
-        new Mile(5).equals(new Mile(1).add(new Mile(4)))
+        Length.createMile(5).equals(Length.createMile(1).add(Length.createMile(4)))
     }
 }
