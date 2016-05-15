@@ -1,4 +1,5 @@
 public class Length {
+    public static final int MILE_TO_BASE_UNIT = 1760 * 12 * 3;
     protected int length;
     protected int unitFactor;
 
