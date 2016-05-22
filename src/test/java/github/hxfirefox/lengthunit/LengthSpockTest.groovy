@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 import static github.hxfirefox.lengthunit.Length.mile
 
-class MileSpockTest extends Specification {
+class LengthSpockTest extends Specification {
     def "3 mile = 3 mile"() {
         given:
 
