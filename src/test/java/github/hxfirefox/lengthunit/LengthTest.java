@@ -1,14 +1,14 @@
 package github.hxfirefox.lengthunit;
 
-import github.hxfirefox.lengthunit.Length;
 import org.junit.Test;
 
-import static github.hxfirefox.lengthunit.Length.*;
+import static github.hxfirefox.lengthunit.Length.mile;
+import static github.hxfirefox.lengthunit.Length.yard;
 import static junit.framework.TestCase.assertFalse;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class MileTest {
+public class LengthTest {
     @Test
     public void should_3_mile_equals_3_mile() throws Exception {
         // given
@@ -58,4 +58,6 @@ public class MileTest {
         // then
         assertThat(yard(1762).equals(mile(1).add(yard(2))), is(true));
     }
+
+
 }
