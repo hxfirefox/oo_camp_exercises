@@ -198,4 +198,24 @@ public class LengthTest {
         // then
         assertThat(inch(12).toString(), is("1 FEET"));
     }
+
+    @Test
+    public void should_output_1_feet_2_inch_when_14_inch() throws Exception {
+        // given
+
+        // when
+
+        // then
+        assertThat(inch(14).toString(), is("1 FEET 2 INCH"));
+    }
+
+    @Test
+    public void should_output_1_mile_2_yard_when_1762_yard() throws Exception {
+        // given
+
+        // when
+
+        // then
+        assertThat(yard(1762).toString(), is("1 MILE 2 YARD"));
+    }
 }

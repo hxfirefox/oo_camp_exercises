@@ -50,13 +50,50 @@ public class Length {
 
     @Override
     public String toString() {
+        boolean finish = false;
+        String out = "";
         if (length == 0) {
             return "0 INCH";
         }
         int baseLen = length * unit.getAmountOfBaseUnit();
-        if (baseLen % Feet.getAmountOfBaseUnit() == 0) {
-            return baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString();
+        if (baseLen % Mile.getAmountOfBaseUnit() == 0) {
+            out += baseLen / Mile.getAmountOfBaseUnit() + " " + Mile.toString();
+            finish = true;
+            return out;
+        } else {
+            if (baseLen / Mile.getAmountOfBaseUnit() == 0) {
+                out += "";
+            } else {
+                out += baseLen / Mile.getAmountOfBaseUnit() + " " + Mile.toString() + " ";
+                baseLen = baseLen % Mile.getAmountOfBaseUnit();
+            }
         }
-        return length + " " + unit.toString();
+        if (baseLen % Yard.getAmountOfBaseUnit() == 0) {
+            out += baseLen / Yard.getAmountOfBaseUnit() + " " + Yard.toString();
+            finish = true;
+            return out;
+        } else {
+            if (baseLen / Yard.getAmountOfBaseUnit() == 0) {
+                out += "";
+            } else {
+                out += baseLen / Yard.getAmountOfBaseUnit() + " " + Yard.toString() + " ";
+                baseLen = baseLen % Yard.getAmountOfBaseUnit();
+            }
+        }
+        if (baseLen % Feet.getAmountOfBaseUnit() == 0) {
+            out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString();
+            finish = true;
+            return out;
+        } else {
+            if (baseLen / Feet.getAmountOfBaseUnit() == 0) {
+                out += "" + baseLen % Feet.getAmountOfBaseUnit() + " " + Inch.toString();
+            } else {
+                out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString() + " ";
+                baseLen = baseLen % Feet.getAmountOfBaseUnit();
+                out += baseLen + " " + Inch.toString();
+            }
+        }
+
+        return out;
     }
 }
