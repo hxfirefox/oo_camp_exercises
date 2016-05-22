@@ -167,4 +167,15 @@ public class LengthTest {
         // then
         assertThat(inch(5).equals(inch(1).add(inch(4))), is(true));
     }
+
+    @Test
+    public void should_output_0_inch_when_length_value_zero() throws Exception {
+        // given
+
+        // when
+
+        // then
+        assertThat(inch(0).toString(), is("0 INCH"));
+        assertThat(mile(0).toString(), is("0 INCH"));
+    }
 }

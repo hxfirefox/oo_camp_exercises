@@ -47,4 +47,12 @@ public class Length {
                 other.length * other.unit.getAmountOfBaseUnit();
         return new Length(len, BaseUnit);
     }
+
+    @Override
+    public String toString() {
+        if (length == 0) {
+            return "0 INCH";
+        }
+        return null;
+    }
 }
