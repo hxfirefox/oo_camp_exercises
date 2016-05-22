@@ -53,6 +53,10 @@ public class Length {
         if (length == 0) {
             return "0 INCH";
         }
-        return null;
+        int baseLen = length * unit.getAmountOfBaseUnit();
+        if (baseLen % Feet.getAmountOfBaseUnit() == 0) {
+            return baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString();
+        }
+        return length + " " + unit.toString();
     }
 }

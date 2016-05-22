@@ -39,13 +39,13 @@ public class LengthTest {
     }
 
     @Test
-    public void should_1_feet_equals_3_inch() throws Exception {
+    public void should_1_feet_equals_12_inch() throws Exception {
         // given
 
         // when
 
         // then
-        assertThat(feet(1).equals(inch(3)), is(true));
+        assertThat(feet(1).equals(inch(12)), is(true));
     }
 
     @Test
@@ -79,13 +79,13 @@ public class LengthTest {
     }
 
     @Test
-    public void should_1_yard_equals_12_feet() throws Exception {
+    public void should_1_yard_equals_3_feet() throws Exception {
         // given
 
         // when
 
         // then
-        assertThat(yard(1).equals(feet(12)), is(true));
+        assertThat(yard(1).equals(feet(3)), is(true));
     }
 
     @Test
@@ -177,5 +177,25 @@ public class LengthTest {
         // then
         assertThat(inch(0).toString(), is("0 INCH"));
         assertThat(mile(0).toString(), is("0 INCH"));
+    }
+
+    @Test
+    public void should_output_1_inch() throws Exception {
+        // given
+
+        // when
+
+        // then
+        assertThat(inch(1).toString(), is("1 INCH"));
+    }
+
+    @Test
+    public void should_output_1_feet_when_12_inch() throws Exception {
+        // given
+
+        // when
+
+        // then
+        assertThat(inch(12).toString(), is("1 FEET"));
     }
 }
