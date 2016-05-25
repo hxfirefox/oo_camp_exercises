@@ -5,8 +5,16 @@ import github.hxfirefox.lengthunit.LengthUnit;
 
 public class FormatHandler {
     private int restLen;
+    private static FormatHandler handler = null;
 
-    public FormatHandler() {
+    private FormatHandler() {
+    }
+
+    public static FormatHandler getInstance() {
+        if (handler == null) {
+            return new FormatHandler();
+        }
+        return handler;
     }
 
     public FormatHandler withParams(Length length) {

@@ -58,8 +58,7 @@ public class Length {
 
     @Override
     public String toString() {
-        final FormatHandler handler = new FormatHandler().withParams(this);
-        return handler.format();
+        return FormatHandler.getInstance().withParams(this).format();
     }
 
     private int getBaseValue() {
