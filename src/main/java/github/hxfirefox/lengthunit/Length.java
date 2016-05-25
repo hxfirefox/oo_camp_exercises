@@ -1,16 +1,24 @@
 package github.hxfirefox.lengthunit;
 
+import github.hxfirefox.formatter.FormatHandler;
+
 import static github.hxfirefox.lengthunit.LengthUnit.*;
 
 public class Length {
-
-
     protected int length;
     protected LengthUnit unit;
 
     private Length(int length, LengthUnit unit) {
         this.length = length;
         this.unit = unit;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public LengthUnit getUnit() {
+        return unit;
     }
 
     public static Length mile(int length) {
@@ -55,40 +63,24 @@ public class Length {
             return "0 INCH";
         }
         int baseLen = getBaseValue();
-        if (baseLen % Mile.getAmountOfBaseUnit() == 0) {
-            out += baseLen / Mile.getAmountOfBaseUnit() + " " + Mile.toString();
-            return out;
-        } else {
-            if (baseLen / Mile.getAmountOfBaseUnit() == 0) {
-                out += "";
-            } else {
-                out += baseLen / Mile.getAmountOfBaseUnit() + " " + Mile.toString() + " ";
-                baseLen = baseLen % Mile.getAmountOfBaseUnit();
-            }
-        }
-        if (baseLen % Yard.getAmountOfBaseUnit() == 0) {
-            out += baseLen / Yard.getAmountOfBaseUnit() + " " + Yard.toString();
-            return out;
-        } else {
-            if (baseLen / Yard.getAmountOfBaseUnit() == 0) {
-                out += "";
-            } else {
-                out += baseLen / Yard.getAmountOfBaseUnit() + " " + Yard.toString() + " ";
-                baseLen = baseLen % Yard.getAmountOfBaseUnit();
-            }
-        }
-        if (baseLen % Feet.getAmountOfBaseUnit() == 0) {
-            out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString();
-            return out;
-        } else {
-            if (baseLen / Feet.getAmountOfBaseUnit() == 0) {
-                out += "" + baseLen % Feet.getAmountOfBaseUnit() + " " + Inch.toString();
-            } else {
-                out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString() + " ";
-                baseLen = baseLen % Feet.getAmountOfBaseUnit();
-                out += baseLen + " " + Inch.toString();
-            }
-        }
+        final FormatHandler handler = new FormatHandler(this);
+        out += handler.format(Mile);
+        out += handler.format(Yard);
+        out += handler.format(Feet);
+        out += handler.format(Inch);
+
+//        if (baseLen % Feet.getAmountOfBaseUnit() == 0) {
+//            out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString();
+//            return out;
+//        } else {
+//            if (baseLen / Feet.getAmountOfBaseUnit() == 0) {
+//                out += "" + baseLen % Feet.getAmountOfBaseUnit() + " " + Inch.toString();
+//            } else {
+//                out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString() + " ";
+//                baseLen = baseLen % Feet.getAmountOfBaseUnit();
+//                out += baseLen + " " + Inch.toString();
+//            }
+//        }
 
         return out;
     }
