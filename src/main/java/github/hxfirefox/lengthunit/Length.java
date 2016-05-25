@@ -58,17 +58,8 @@ public class Length {
 
     @Override
     public String toString() {
-        String out = "";
-        if (length == 0) {
-            return "0 INCH";
-        }
-        int baseLen = getBaseValue();
-        final FormatHandler handler = new FormatHandler(this);
-        out += handler.format(Mile);
-        out += handler.format(Yard);
-        out += handler.format(Feet);
-        out += handler.format(Inch);
-        return out;
+        final FormatHandler handler = new FormatHandler().withParams(this);
+        return handler.format();
     }
 
     private int getBaseValue() {

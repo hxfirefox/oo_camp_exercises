@@ -6,11 +6,18 @@ import github.hxfirefox.lengthunit.LengthUnit;
 public class FormatHandler {
     private int restLen;
 
-    public FormatHandler(Length length) {
+    public FormatHandler() {
+    }
+
+    public FormatHandler withParams(Length length) {
         this.restLen = length.getLength() * length.getUnit().getAmountOfBaseUnit();
+        return this;
     }
 
     public String format() {
+        if (restLen == 0) {
+            return "0 INCH";
+        }
         String out = "";
         for (LengthUnit unit : LengthUnit.values()) {
             out += format(unit);
