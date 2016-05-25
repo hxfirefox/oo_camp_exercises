@@ -33,8 +33,8 @@ public class Length {
     public boolean equals(Object o) {
         Length length = (Length) o;
 
-        return this.length * unit.getAmountOfBaseUnit() ==
-                length.length * length.unit.getAmountOfBaseUnit();
+        return getBaseValue() ==
+                length.getBaseValue();
     }
 
     @Override
@@ -43,8 +43,8 @@ public class Length {
     }
 
     public Length add(Length other) {
-        final int len = this.length * unit.getAmountOfBaseUnit() +
-                other.length * other.unit.getAmountOfBaseUnit();
+        final int len = getBaseValue() +
+                other.getBaseValue();
         return new Length(len, Inch);
     }
 
@@ -54,7 +54,7 @@ public class Length {
         if (length == 0) {
             return "0 INCH";
         }
-        int baseLen = length * unit.getAmountOfBaseUnit();
+        int baseLen = getBaseValue();
         if (baseLen % Mile.getAmountOfBaseUnit() == 0) {
             out += baseLen / Mile.getAmountOfBaseUnit() + " " + Mile.toString();
             return out;
@@ -91,5 +91,9 @@ public class Length {
         }
 
         return out;
+    }
+
+    private int getBaseValue() {
+        return length * unit.getAmountOfBaseUnit();
     }
 }
