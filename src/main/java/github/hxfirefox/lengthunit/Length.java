@@ -68,20 +68,6 @@ public class Length {
         out += handler.format(Yard);
         out += handler.format(Feet);
         out += handler.format(Inch);
-
-//        if (baseLen % Feet.getAmountOfBaseUnit() == 0) {
-//            out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString();
-//            return out;
-//        } else {
-//            if (baseLen / Feet.getAmountOfBaseUnit() == 0) {
-//                out += "" + baseLen % Feet.getAmountOfBaseUnit() + " " + Inch.toString();
-//            } else {
-//                out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString() + " ";
-//                baseLen = baseLen % Feet.getAmountOfBaseUnit();
-//                out += baseLen + " " + Inch.toString();
-//            }
-//        }
-
         return out;
     }
 

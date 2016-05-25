@@ -20,22 +20,12 @@ public class FormatHandler {
     }
 
     public String format(LengthUnit unit) {
-        String out = "";
-        if (restLen == 0) {
+        if (restLen % unit.getAmountOfBaseUnit() >= 0 && restLen / unit.getAmountOfBaseUnit() == 0) {
             return "";
         }
-        if (restLen % unit.getAmountOfBaseUnit() == 0) {
-            out = restLen / unit.getAmountOfBaseUnit() + " " + unit.toString();
-            restLen = 0;
-            return out;
-        } else {
-            if (restLen / unit.getAmountOfBaseUnit() == 0) {
-                return "";
-            } else {
-                out = restLen / unit.getAmountOfBaseUnit() + " " + unit.toString() + " ";
-                restLen = restLen % unit.getAmountOfBaseUnit();
-                return out;
-            }
-        }
+        String split = restLen % unit.getAmountOfBaseUnit() != 0 ? " " : "";
+        String out = restLen / unit.getAmountOfBaseUnit() + " " + unit.toString() + split;
+        restLen = restLen % unit.getAmountOfBaseUnit();
+        return out;
     }
 }
