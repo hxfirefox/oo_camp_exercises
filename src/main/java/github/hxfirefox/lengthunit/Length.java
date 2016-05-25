@@ -45,12 +45,11 @@ public class Length {
     public Length add(Length other) {
         final int len = this.length * unit.getAmountOfBaseUnit() +
                 other.length * other.unit.getAmountOfBaseUnit();
-        return new Length(len, BaseUnit);
+        return new Length(len, Inch);
     }
 
     @Override
     public String toString() {
-        boolean finish = false;
         String out = "";
         if (length == 0) {
             return "0 INCH";
@@ -58,7 +57,6 @@ public class Length {
         int baseLen = length * unit.getAmountOfBaseUnit();
         if (baseLen % Mile.getAmountOfBaseUnit() == 0) {
             out += baseLen / Mile.getAmountOfBaseUnit() + " " + Mile.toString();
-            finish = true;
             return out;
         } else {
             if (baseLen / Mile.getAmountOfBaseUnit() == 0) {
@@ -70,7 +68,6 @@ public class Length {
         }
         if (baseLen % Yard.getAmountOfBaseUnit() == 0) {
             out += baseLen / Yard.getAmountOfBaseUnit() + " " + Yard.toString();
-            finish = true;
             return out;
         } else {
             if (baseLen / Yard.getAmountOfBaseUnit() == 0) {
@@ -82,7 +79,6 @@ public class Length {
         }
         if (baseLen % Feet.getAmountOfBaseUnit() == 0) {
             out += baseLen / Feet.getAmountOfBaseUnit() + " " + Feet.toString();
-            finish = true;
             return out;
         } else {
             if (baseLen / Feet.getAmountOfBaseUnit() == 0) {
