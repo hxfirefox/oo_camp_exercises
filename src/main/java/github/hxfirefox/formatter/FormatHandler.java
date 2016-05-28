@@ -3,7 +3,7 @@ package github.hxfirefox.formatter;
 import github.hxfirefox.lengthunit.Length;
 import github.hxfirefox.lengthunit.LengthUnit;
 
-public class FormatHandler {
+public class FormatHandler implements Formatter{
     private int restLen;
     private static FormatHandler handler = null;
 
@@ -22,6 +22,7 @@ public class FormatHandler {
         return this;
     }
 
+    @Override
     public String format() {
         if (restLen == 0) {
             return "0 INCH";
@@ -34,7 +35,7 @@ public class FormatHandler {
         return out;
     }
 
-    public String format(LengthUnit unit) {
+    private String format(LengthUnit unit) {
         if (restLen == 0) {
             return "";
         }
