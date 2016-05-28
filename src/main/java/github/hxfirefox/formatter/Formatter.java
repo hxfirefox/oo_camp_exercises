@@ -1,6 +1,9 @@
 package github.hxfirefox.formatter;
 
-@FunctionalInterface
+import github.hxfirefox.lengthunit.Length;
+
 public interface Formatter {
     public String format();
+
+    public Formatter withParams(Length length);
 }

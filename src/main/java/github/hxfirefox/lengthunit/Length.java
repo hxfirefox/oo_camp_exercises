@@ -1,12 +1,13 @@
 package github.hxfirefox.lengthunit;
 
-import github.hxfirefox.formatter.FormatHandler;
+import github.hxfirefox.formatter.Formatter;
 
 import static github.hxfirefox.lengthunit.LengthUnit.*;
 
 public class Length {
     protected int length;
     protected LengthUnit unit;
+    private Formatter formatter;
 
     private Length(int length, LengthUnit unit) {
         this.length = length;
@@ -58,7 +59,12 @@ public class Length {
 
     @Override
     public String toString() {
-        return FormatHandler.getInstance().withParams(this).format();
+        return formatter.withParams(this).format();
+    }
+
+    public Length withFormat(Formatter formatter) {
+        this.formatter = formatter;
+        return this;
     }
 
     private int getBaseValue() {

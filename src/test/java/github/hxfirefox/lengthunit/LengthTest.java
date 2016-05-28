@@ -1,5 +1,6 @@
 package github.hxfirefox.lengthunit;
 
+import github.hxfirefox.formatter.FormatHandler;
 import org.junit.Test;
 
 import static github.hxfirefox.lengthunit.Length.*;
@@ -175,8 +176,8 @@ public class LengthTest {
         // when
 
         // then
-        assertThat(inch(0).toString(), is("0 INCH"));
-        assertThat(mile(0).toString(), is("0 INCH"));
+        assertThat(inch(0).withFormat(FormatHandler.getInstance()).toString(), is("0 INCH"));
+        assertThat(mile(0).withFormat(FormatHandler.getInstance()).toString(), is("0 INCH"));
     }
 
     @Test
@@ -186,7 +187,7 @@ public class LengthTest {
         // when
 
         // then
-        assertThat(inch(1).toString(), is("1 INCH"));
+        assertThat(inch(1).withFormat(FormatHandler.getInstance()).toString(), is("1 INCH"));
     }
 
     @Test
@@ -196,7 +197,7 @@ public class LengthTest {
         // when
 
         // then
-        assertThat(inch(12).toString(), is("1 FEET"));
+        assertThat(inch(12).withFormat(FormatHandler.getInstance()).toString(), is("1 FEET"));
     }
 
     @Test
@@ -206,7 +207,7 @@ public class LengthTest {
         // when
 
         // then
-        assertThat(inch(14).toString(), is("1 FEET 2 INCH"));
+        assertThat(inch(14).withFormat(FormatHandler.getInstance()).toString(), is("1 FEET 2 INCH"));
     }
 
     @Test
@@ -216,6 +217,6 @@ public class LengthTest {
         // when
 
         // then
-        assertThat(yard(1762).toString(), is("1 MILE 2 YARD"));
+        assertThat(yard(1762).withFormat(FormatHandler.getInstance()).toString(), is("1 MILE 2 YARD"));
     }
 }
