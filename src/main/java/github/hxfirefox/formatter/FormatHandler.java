@@ -35,12 +35,14 @@ public class FormatHandler {
     }
 
     public String format(LengthUnit unit) {
-        if (restLen % unit.getAmountOfBaseUnit() >= 0 && restLen / unit.getAmountOfBaseUnit() == 0) {
+        if (restLen == 0) {
             return "";
         }
-        String split = restLen % unit.getAmountOfBaseUnit() != 0 ? " " : "";
-        String out = restLen / unit.getAmountOfBaseUnit() + " " + unit.toString() + split;
+        String split = restLen % unit.getAmountOfBaseUnit() == 0 ? "" : " ";
+        final int value = restLen / unit.getAmountOfBaseUnit();
+        String out = value == 0 ? "" : value + " " + unit.toString() + split;
         restLen = restLen % unit.getAmountOfBaseUnit();
+
         return out;
     }
 }
