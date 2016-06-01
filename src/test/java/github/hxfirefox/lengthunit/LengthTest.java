@@ -1,6 +1,7 @@
 package github.hxfirefox.lengthunit;
 
 import github.hxfirefox.formatter.FormatHandler;
+import github.hxfirefox.formatter.Printable;
 import org.junit.Test;
 
 import static github.hxfirefox.lengthunit.Length.*;
@@ -218,5 +219,15 @@ public class LengthTest {
 
         // then
         assertThat(yard(1762).withFormat(FormatHandler.getInstance()).toString(), is("1 MILE 2 YARD"));
+    }
+
+    @Test
+    public void should_output_36_inch_when_1_yard() throws Exception {
+        // given
+
+        // when
+        final String out = yard(1).format(length -> length.length * length.unit.getAmountOfBaseUnit() + " INCH");
+        // then
+        assertThat(out, is("36 INCH"));
     }
 }
