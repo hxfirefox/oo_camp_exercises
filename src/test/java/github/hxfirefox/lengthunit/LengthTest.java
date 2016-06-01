@@ -175,10 +175,11 @@ public class LengthTest {
         // given
 
         // when
-
+        final String outInch = inch(0).format(length -> FormatHandler.getInstance().withParams(length).format());
+        final String outMile = mile(0).format(length -> FormatHandler.getInstance().withParams(length).format());
         // then
-        assertThat(inch(0).withFormat(FormatHandler.getInstance()).toString(), is("0 INCH"));
-        assertThat(mile(0).withFormat(FormatHandler.getInstance()).toString(), is("0 INCH"));
+        assertThat(outInch, is("0 INCH"));
+        assertThat(outMile, is("0 INCH"));
     }
 
     @Test
@@ -186,9 +187,9 @@ public class LengthTest {
         // given
 
         // when
-
+        final String out = inch(1).format(length -> FormatHandler.getInstance().withParams(length).format());
         // then
-        assertThat(inch(1).withFormat(FormatHandler.getInstance()).toString(), is("1 INCH"));
+        assertThat(out, is("1 INCH"));
     }
 
     @Test
@@ -196,9 +197,9 @@ public class LengthTest {
         // given
 
         // when
-
+        final String out = inch(12).format(length -> FormatHandler.getInstance().withParams(length).format());
         // then
-        assertThat(inch(12).withFormat(FormatHandler.getInstance()).toString(), is("1 FEET"));
+        assertThat(out, is("1 FEET"));
     }
 
     @Test
@@ -206,9 +207,9 @@ public class LengthTest {
         // given
 
         // when
-
+        final String out = inch(14).format(length -> FormatHandler.getInstance().withParams(length).format());
         // then
-        assertThat(inch(14).withFormat(FormatHandler.getInstance()).toString(), is("1 FEET 2 INCH"));
+        assertThat(out, is("1 FEET 2 INCH"));
     }
 
     @Test
@@ -216,9 +217,9 @@ public class LengthTest {
         // given
 
         // when
-
+        final String out = yard(1762).format(length -> FormatHandler.getInstance().withParams(length).format());
         // then
-        assertThat(yard(1762).withFormat(FormatHandler.getInstance()).toString(), is("1 MILE 2 YARD"));
+        assertThat(out, is("1 MILE 2 YARD"));
     }
 
     @Test
